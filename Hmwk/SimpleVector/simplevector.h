@@ -1,9 +1,9 @@
 #ifndef SIMPLEVECTOR_H
 #define SIMPLEVECTOR_H
 
-#include <iostream>
-#include <new> //needed for bad alloc
-#include <cstdlib> //neded for exit function
+#include <iostream>  //for output stream
+#include <new>       //needed for bad alloc
+#include <cstdlib>   //neded for exit function
 
 using namespace std;
 
@@ -11,12 +11,11 @@ template <class T>
 class SimpleVector
 {
 private:
-    T* arrayPtr;            //To point to the allocated array
-    unsigned int arraySize;      //number of elements in the array
-    unsigned int allocSize;        //maximum number of elements
-    void memError();    //handles memory allocation errors
-    void subError();    //handles subscripts out of range
-    void sizeError();   //handles copyto size limits error
+    T* arrayPtr;                //To point to the allocated array
+    unsigned int arraySize;     //number of elements in the array
+    unsigned int allocSize;     //maximum number of elements
+    void memError();            //handles memory allocation errors
+    void subError();            //handles subscripts out of range
 
 public:
     //default constructor
@@ -31,13 +30,13 @@ public:
     //destructor declaration
     ~SimpleVector();
 
-    //accessor to the arraySize
+    //accessors to the arraySize
     int size()const {return arraySize;}
 
-    //accessor the allocSize
+    //accessors the allocSize
     int maxSize()const {return allocSize;}
 
-    //acessor to the specific element if the vector
+    //accessors to the specific element if the vector
     T getElementAt (unsigned int posistion);
 
     //overloaded [] operator declaration
@@ -51,10 +50,9 @@ public:
 };
 
 
-/*
- * Default constructor for SimpleVector class
- * sets pointer and arraySize to zero
-*/
+/*******************************************************************************
+ * Default constructor for SimpleVector class sets pointer and arraySize to zero
+*******************************************************************************/
 template<class T>
 SimpleVector<T>::SimpleVector(){
     arrayPtr = 0;
@@ -62,12 +60,10 @@ SimpleVector<T>::SimpleVector(){
     allocSize = 0;
 }
 
-/*
-* Constructor for SimpleVector class.
-* Sets the size of the array and allocates
+/*******************************************************************************
+* Constructor for SimpleVector class.Sets the size of the array and allocates
 * memory for it.
-*/
-
+*******************************************************************************/
 template<class T>
 SimpleVector<T>::SimpleVector(unsigned int s)
 {
@@ -98,9 +94,9 @@ SimpleVector<T>::SimpleVector(unsigned int s)
     }
 }
 
-/*
+/*******************************************************************************
  * Copy constructor for simple vector class
-*/
+*******************************************************************************/
 template<class T>
 SimpleVector<T>::SimpleVector(const SimpleVector &obj){
     //copy the array size and maxSize
@@ -126,9 +122,9 @@ SimpleVector<T>::SimpleVector(const SimpleVector &obj){
 
 
 
-/*
+/*******************************************************************************
 * Destructor for simpleVector Class
-*/
+*******************************************************************************/
 
 template<class T>
 SimpleVector<T>::~SimpleVector()
@@ -137,43 +133,31 @@ SimpleVector<T>::~SimpleVector()
         delete arrayPtr;
 }
 
-/*
- * memError function. Displays an error message and
- * terminates the memory allocation fails
-*/
+/*******************************************************************************
+ * memError function. Displays an error message and terminates the memory
+ * allocation fails
+*******************************************************************************/
 template<class T>
 void SimpleVector<T>::memError(){
     cout << "ERROR: Cannot allocate memory. /n";
     exit(EXIT_FAILURE);
 }
 
-/*
- * subError function. Displays an error message and
- * terminates when a subscript is out of range
-*/
+/*******************************************************************************
+ * subError function. Displays an error message and terminates when a subscript
+ * is out of range
+*******************************************************************************/
 template<class T>
 void SimpleVector<T>::subError(){
     cout << "ERROR: subscript is out of range. /n";
     exit(EXIT_FAILURE);
 }
 
-/* sizeError function. Displays error message and
- * terminates when the destination vector is of
- * insufficient size to recieve source vectors
- * sontents
-*/
-template<class T>
-void SimpleVector<T>::sizeError(){
-    cout << "ERROR: Destinion vector too small to recieve"
-            "contents of source. /n";
-    exit(EXIT_FAILURE);
-}
 
-/*
- * getElementAt function. The argument is a subscript.
- * This function returns the value stored at the sub-script
- * in the array
- */
+/*******************************************************************************
+ * getElementAt function. The argument is a subscript. This function returns
+ * the value stored at the sub-script in the array
+ ******************************************************************************/
 template<class T>
 T SimpleVector<T>::getElementAt(unsigned int position){
     if(position < 0 || position >= arraySize){
@@ -182,21 +166,20 @@ T SimpleVector<T>::getElementAt(unsigned int position){
     return arrayPtr[position];
 }
 
-/*
- * Overloaded [] operator. The argument is a subscript.
- * This function returns a reference to the element
- * in the array
- */
+/*******************************************************************************
+ * Overloaded [] operator. The argument is a subscript. This function returns
+ * a reference to the element in the array
+ ******************************************************************************/
 template<class T>
 T &SimpleVector<T>::operator[](const unsigned int &posistion)
 {
     getElementAt(posistion);
 }
 
-/*
- * push function. push element to the end of the vector.
- * double at the top to gold the new value pushed
- */
+/*******************************************************************************
+ * push function. push element to the end of the vector. Double at the top to
+ * hold the new value pushed
+ ******************************************************************************/
 template<class T>
 void SimpleVector<T>::push(T item)
 {
@@ -240,11 +223,11 @@ void SimpleVector<T>::push(T item)
     }
 }
 
-/*
+/*******************************************************************************
  * pull function. removes last item in array and reduces array size by one.
  * If arraySize is less than half of capacity, cut capacity in half. Returns
  * removed item.
- */
+ ******************************************************************************/
 template<class T>
 T SimpleVector<T>::pull()
 {
@@ -279,8 +262,9 @@ T SimpleVector<T>::pull()
         allocSize /=2;
 
 
-    }else{//if removing last entry doe NOT set array utilization to less than half
-        //decriment array
+    }else{
+        //if removing last entry doe NOT set array utilization to 
+        //less than half decrement array
         arraySize--;
 
     }

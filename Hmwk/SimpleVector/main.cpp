@@ -17,6 +17,7 @@ int main()
     for (int count = 0; count <2.56e2; count++){
         vector.push(rand()%100);
     }
+    
 
     vector.push(rand()%100);
     vector.push(rand()%100);
@@ -32,7 +33,7 @@ int main()
 //    }
 
     //output size and maxSize
-    //cout<<endl<<"Vector Size: "<<vector.size()<<"  \tVector Max Size: "<<vector.getMaxSize()<<endl;
+    cout<<endl<<"Vector Size: "<<vector.size()<<"  \tVector Max Size: "<<vector.maxSize()<<endl;
     return 0;
 }
 
