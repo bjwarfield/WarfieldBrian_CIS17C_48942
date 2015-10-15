@@ -36,11 +36,11 @@ public:
     //accessors the allocSize
     int maxSize()const {return allocSize;}
 
-    //accessors to the specific element if the vector
-    T getElementAt (unsigned int posistion);
+    //accessors to the value of the specific element of the vector
+    T getElementAt (int posistion);
 
-    //overloaded [] operator declaration
-    T &operator[](const unsigned int &);
+    //overloaded [] operator declaration. Returns element by reference
+    T &operator[](const int &);
 
     //push routine
     void push(T item);
@@ -159,8 +159,8 @@ void SimpleVector<T>::subError(){
  * the value stored at the sub-script in the array
  ******************************************************************************/
 template<class T>
-T SimpleVector<T>::getElementAt(unsigned int position){
-    if(position < 0 || position >= arraySize){
+T SimpleVector<T>::getElementAt(int position){
+    if(position < 0 || position >= static_cast<int>(arraySize)){
         subError();
     }
     return arrayPtr[position];
@@ -171,9 +171,12 @@ T SimpleVector<T>::getElementAt(unsigned int position){
  * a reference to the element in the array
  ******************************************************************************/
 template<class T>
-T &SimpleVector<T>::operator[](const unsigned int &posistion)
+T &SimpleVector<T>::operator[](const int &position)
 {
-    getElementAt(posistion);
+    if(position < 0 || position >= static_cast<int>(arraySize)){
+        subError();
+    }
+    return arrayPtr[position];
 }
 
 /*******************************************************************************
@@ -218,7 +221,7 @@ void SimpleVector<T>::push(T item)
     }else{//no new allocation needed for new value
         //assign next key to new value
         arrayPtr[arraySize]=item;
-        //increment arraysize to account
+        //increment arraySize to account
         arraySize++;
     }
 }
@@ -236,7 +239,7 @@ T SimpleVector<T>::pull()
 
     //if removing last entry sets array utilization to less than half
     if(arraySize-1 < allocSize/2){
-        //decriment arraySize
+        //decrement arraySize
         arraySize--;
 
         //allocate new array with half the size of current
