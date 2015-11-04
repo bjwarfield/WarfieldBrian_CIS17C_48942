@@ -1,7 +1,7 @@
+//doubly linked implementation
 
-
-#ifndef LINKEDLIST_H
-#define	LINKEDLIST_H
+#ifndef DOUBLELINKEDLIST_H
+#define	DOUBLELINKEDLIST_H
 #include <cstdlib>
 #include <new>
 #include <iostream>
@@ -9,16 +9,19 @@
 using namespace std;
 
 template<class T>
-class LinkedList {
+class D_LinkedList {
 private:
 
     typedef struct node {
         T data;
         node *next = NULL;
+        node *prev = NULL;
     } * nodePtr;
 
     //marks the head of the linked list
     nodePtr head;
+    //marks the tail of the linked list
+    nodePtr tail;
     //marks the active node in the list
     nodePtr current;
     //marks temporary node
@@ -29,21 +32,20 @@ private:
     //handles subscript errors
     void subError();
     //copy contents from list
-    void copyList(LinkedList &);
+    void copyList(D_LinkedList &);
 
 public:
     //default constructor class
-    LinkedList();
+    D_LinkedList();
     //constructor initializes with one element
-    LinkedList(T);
+    D_LinkedList(T);
     //constructor initializes with a copy of the contents in the received list
-    LinkedList(LinkedList &);
+    D_LinkedList(D_LinkedList &);
 
 
-    //add data to new node
-    void push(T newData);
-    //remove last element and returns it
-    T pull();
+    //remove first/last element and returns it
+    T pullBack();
+    T pullFront();
 
     //returns list size
     int size();
@@ -55,7 +57,7 @@ public:
     T &operator[](const int &);
 
     //overloaded = operator declaration
-    void operator=(LinkedList &);
+    void operator=(D_LinkedList &);
 
 
     //return first element in list
@@ -71,7 +73,8 @@ public:
     void append(T newData);
 
     //prints each element in order to output stream
-    void printList();
+    void printForward();
+    void printBackward();
 
     //deletes contents of list
     void clearList();
@@ -80,14 +83,13 @@ public:
     T extract(int);
 
     void insertBefore(int index, T value);
-
     void insertAfter(int index, T value);
 
     bool isEmpty();
 
 
     //destructor method. Deleted each allocated node in the list.
-    ~LinkedList();
+    ~D_LinkedList();
 
 };
 
@@ -95,9 +97,10 @@ public:
  * Default constructor class
  ******************************************************************************/
 template<class T>
-LinkedList<T>::LinkedList() {
+D_LinkedList<T>::D_LinkedList() {
     //no data, no nodes
     head = NULL;
+    tail = NULL;
     current = NULL;
     temp = NULL;
     listSize = 0;
@@ -108,7 +111,7 @@ LinkedList<T>::LinkedList() {
  * is out of range
  *******************************************************************************/
 template<class T>
-void LinkedList<T>::subError() {
+void D_LinkedList<T>::subError() {
     cout << "Error: subscript is out of range" << endl;
     exit(EXIT_FAILURE);
 }
@@ -118,15 +121,18 @@ void LinkedList<T>::subError() {
  * @param data element to store
  ******************************************************************************/
 template<class T>
-LinkedList<T>::LinkedList(T addData) {
+D_LinkedList<T>::D_LinkedList(T addData) {
     //create new node
     temp = new node;
     temp->data = addData;
     temp->next = NULL;
+    temp->prev = NULL;
     //set size counter
     listSize = 1;
     //set as new head to node
-    current = head = temp;
+    head = temp;
+    tail = temp;
+    current = temp;
 
 }
 
@@ -135,8 +141,9 @@ LinkedList<T>::LinkedList(T addData) {
  * the provided linked list.
  ******************************************************************************/
 template<class T>
-LinkedList<T>::LinkedList(LinkedList &list) {
+D_LinkedList<T>::D_LinkedList(D_LinkedList &list) {
     head = NULL;
+    tail = NULL;
     current = NULL;
     temp = NULL;
     listSize = 0;
@@ -148,13 +155,15 @@ LinkedList<T>::LinkedList(LinkedList &list) {
  * @param reference of list to be copied 
  ******************************************************************************/
 template<class T>
-void LinkedList<T>::copyList(LinkedList &list) {
+void D_LinkedList<T>::copyList(D_LinkedList &list) {
     if (list.head) {
         temp = new node;
         temp->data = list.head->data;
         temp->next = NULL;
+        temp->prev = NULL;
 
         head = temp;
+        tail = temp;
         current = head;
         listSize++;
 
@@ -166,9 +175,11 @@ void LinkedList<T>::copyList(LinkedList &list) {
             temp = new node;
             temp->data = list.current->data;
             temp->next = NULL;
+            temp->prev = current;
 
             current->next = temp;
             current = current->next;
+            tail = current;
 
             listSize++;
         }
@@ -181,7 +192,7 @@ void LinkedList<T>::copyList(LinkedList &list) {
  * Deletes contents of list
  ******************************************************************************/
 template<class T>
-void LinkedList<T>::clearList() {
+void D_LinkedList<T>::clearList() {
     if (head) {
         current = head;
         while (current->next != NULL) {
@@ -194,6 +205,7 @@ void LinkedList<T>::clearList() {
         temp = NULL;
         current = NULL;
         head = NULL;
+        tail = NULL;
     }
 }
 
@@ -201,45 +213,18 @@ void LinkedList<T>::clearList() {
  * Destructor function. Deleted all nodes
  ******************************************************************************/
 template<class T>
-LinkedList<T>::~LinkedList() {
+D_LinkedList<T>::~D_LinkedList() {
     clearList();
 }
 
-/*******************************************************************************
- * Push function. Adds data in new node.
- * @param data to add to the list
- ******************************************************************************/
-template<class T>
-void LinkedList<T>::push(T newData) {
-    //create new node
-    temp = new node;
-    temp->data = newData;
-    temp->next = NULL;
 
-    //if previous data exists
-    if (head) {
-
-        //traverse the list
-        current = head;
-        while (current->next != NULL) {
-            current = current->next;
-        }
-        //append new node to end of list
-        current->next = temp;
-    } else {//if previous data does not exist
-        //set new node as head
-        head = temp;
-    }
-
-    listSize++;
-}
 
 /*******************************************************************************
- * get function. return element at selected index.
+ * get function. return element by value at selected index.
  * @param int index of element
  ******************************************************************************/
 template<class T>
-T LinkedList<T>::get(int index) {
+T D_LinkedList<T>::get(int index) {
     if (index < 0 || index >= static_cast<int> (listSize)) {
         subError();
     }
@@ -253,11 +238,12 @@ T LinkedList<T>::get(int index) {
 }
 
 /*******************************************************************************
- * overloaded [] operator get function. return element at selected index.
+ * overloaded [] operator get function. return element by reference at selected
+ *  index.
  * @param int index of element
  ******************************************************************************/
 template<class T>
-T &LinkedList<T>::operator[](const int &index) {
+T &D_LinkedList<T>::operator[](const int &index) {
     if (index < 0 || index >= static_cast<int> (listSize)) {
         subError();
     }
@@ -276,44 +262,38 @@ T &LinkedList<T>::operator[](const int &index) {
  * the received list
  ******************************************************************************/
 template<class T>
-void LinkedList<T>::operator=(LinkedList& sourceList) {
+void D_LinkedList<T>::operator=(D_LinkedList& sourceList) {
     clearList();
     copyList(sourceList);
 }
 
 /*******************************************************************************
- * Pull function. removes data at end of list and returns it.
+ * PullBack function. removes data at end of list and returns it by value.
  * @return the removed element at the end of the list
  ******************************************************************************/
 template<class T>
-T LinkedList<T>::pull() {
-    //locate head node 
-    current = temp = head;
-
-    //traverse to the end of the list
-    while (current->next != NULL) {
-        //remember previous node
-        temp = current;
-        current = current->next;
-    }
-
-    //capture data
-    T pull = current->data;
-
-    //if this is only node in the list
-    if (current == head) {
-        //delete node and set all to NULL
-        delete head;
-        head = current = temp = NULL;
-    } else {
-        //set previous nodePointer to NULL
-        temp->next = NULL;
-        //remove node
-        delete current;
-    }
-    //decrement size counter
+T D_LinkedList<T>::pullBack() {
+    T pull = tail->data;
+    current = tail->prev;
+    current->next = NULL;
+    delete tail;
+    tail = current;
     listSize--;
-    //return data
+    return pull;
+}
+
+/*******************************************************************************
+ * PullFront function. removes data at end of list and returns it by value.
+ * @return the removed element at the end of the list
+ ******************************************************************************/
+template<class T>
+T D_LinkedList<T>::pullFront() {
+    T pull = head->data;
+    current = head->next;
+    current->prev = NULL;
+    delete head;
+    head= current;
+    listSize--;
     return pull;
 }
 
@@ -321,7 +301,7 @@ T LinkedList<T>::pull() {
  * retrieve the first element in the list
  *******************************************************************************/
 template<class T>
-T LinkedList<T>::first() {
+T D_LinkedList<T>::first() {
     if (!head) {
         subError();
     }
@@ -332,29 +312,31 @@ T LinkedList<T>::first() {
  * retrieve the last element in the list
  *******************************************************************************/
 template<class T>
-T LinkedList<T>::last() {
-    if (!head) {
+T D_LinkedList<T>::last() {
+    if (!tail) {
         subError();
     }
-
-    current = head;
-    while (current->next != NULL) {
-        current = current->next;
-    }
-
-    return current->data;
+    return tail->data;
 }
 
 /*******************************************************************************
  * Add data to the beginning of the list
  *******************************************************************************/
 template<class T>
-void LinkedList<T>::prepend(T newData) {
+void D_LinkedList<T>::prepend(T newData) {
     temp = new node;
     temp->data = newData;
     temp->next = head;
+    temp->prev = NULL;
 
-    head = temp;
+    if(head){
+        head->prev = temp;
+        head = head->prev;
+    }else{
+        head = temp;
+        tail = temp;
+        current = temp;
+    }
     listSize++;
 }
 
@@ -362,56 +344,62 @@ void LinkedList<T>::prepend(T newData) {
  * Add data to the end of the list
  ******************************************************************************/
 template<class T>
-void LinkedList<T>::append(T newData) {
+void D_LinkedList<T>::append(T newData) {
     //create new node
     temp = new node;
     temp->data = newData;
     temp->next = NULL;
+    temp->prev = tail;
 
-    //is list exists
-    if (head) {
-        current = head;
-        while (current->next != NULL) {
-            current = current->next;
-        }
-        //point tail to new node
-        current->next = temp;
-    } else {//if list does not exist
-        //point head to new node
+    if(tail){
+        tail->next = temp;
+        tail = tail->next;
+        listSize++;
+    }else{
         head = temp;
+        tail = temp;
+        current = temp;
     }
-    //increment counter
-    listSize++;
 }
 
 /*******************************************************************************
  * size function. returns the number of nodes in the list
  *******************************************************************************/
 template<class T>
-int LinkedList<T>::size() {
+int D_LinkedList<T>::size() {
     //return listSize as int
     return static_cast<int> (listSize);
 }
 
 /*******************************************************************************
- * Prints each element to a line in the output stream.
+ * Prints each element from head to tail to a line in the output stream.
  *******************************************************************************/
 template<class T>
-void LinkedList<T>::printList() {
+void D_LinkedList<T>::printForward() {
     //if elements exist
     if (head) {
         current = head;
         //traverse the list and output elements
         while (current != NULL) {
             cout << current->data << endl;
-            ;
             current = current->next;
         }
     }
 }
 
 template<class T>
-T LinkedList<T>::extract(int index) {
+void D_LinkedList<T>::printBackward(){
+    if(tail){
+        current = tail;
+        while(current != NULL){
+            cout << current->data << endl;
+            current = current->prev;
+        }
+    }
+}
+
+template<class T>
+T D_LinkedList<T>::extract(int index) {
 
     if (index < 0 || index >= static_cast<int> (listSize)) {
         subError();
@@ -432,18 +420,10 @@ T LinkedList<T>::extract(int index) {
         listSize--;
         return extracted;
     } else if (index == static_cast<int> (listSize) - 1) {//last
-        //set all pointers to head
-        current = head;
-        temp = current;
-        //traverse list to index 
-        for (int i = 0; i < index; i++) {
-            temp = current; //remember previous
-            current = current->next;
-        }
-        extracted = current->data; //get data
-        temp->next = NULL; //set previous->next pointer to null
-        delete current; //delete tail
-        //decrement size counter
+        extracted = tail->data;
+        current = tail;
+        tail = tail->prev;
+        delete current;
         listSize--;
         return extracted; //return data
     } else {//somewhere in the middle
@@ -470,7 +450,7 @@ T LinkedList<T>::extract(int index) {
  * @param T value to be inserted
  ******************************************************************************/
 template<class T>
-void LinkedList<T>::insertBefore(int index, T value) {
+void D_LinkedList<T>::insertBefore(int index, T value) {
     //subscript bound check
     if (index < 0 || index >= static_cast<int> (listSize)) {
         subError();
@@ -516,7 +496,7 @@ void LinkedList<T>::insertBefore(int index, T value) {
  * @param T value to be inserted
  ******************************************************************************/
 template<class T>
-void LinkedList<T>::insertAfter(int index, T value) {
+void D_LinkedList<T>::insertAfter(int index, T value) {
 
     //subscript bound check
     if (index < 0 || index >= static_cast<int> (listSize)) {
@@ -525,21 +505,19 @@ void LinkedList<T>::insertAfter(int index, T value) {
 
     //set to head
     current = head;
-    temp = current;
 
 
     for (int i = 0; i < index; i++) {
-        temp = current; //remember previous
         current = current->next; //traverse list
     }
     //create new node
-    nodePtr newNode = new node;
+    temp = new node;
     //capture data
-    newNode->data = value;
+    temp->data = value;
     //point new->next to current
-    newNode->next = current;
+    temp->next = current->next;
     //point previous->next to new
-    temp->next = newNode;
+    current->next = temp;
     //increment listSize
     listSize++;
 
@@ -549,9 +527,9 @@ void LinkedList<T>::insertAfter(int index, T value) {
  * @returns true is list is empty
  ******************************************************************************/
 template<class T>
-bool LinkedList<T>::isEmpty()
+bool D_LinkedList<T>::isEmpty()
 {
     return listSize == 0;
 }
-#endif	/* LINKEDLIST_H */
+#endif	/* DOUBLELINKEDLIST_H */
 

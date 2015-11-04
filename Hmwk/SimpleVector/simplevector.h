@@ -79,7 +79,7 @@ SimpleVector<T>::SimpleVector(unsigned int s)
     }
 
     //for debugging
-    cout<< "allocating size for "<<allocSize<<" elements"<<endl;
+    cout<< "Debug msg: Allocating size for "<<allocSize<<" elements"<<endl;
 
     //allocate memory for the array
     try {
@@ -238,7 +238,7 @@ T SimpleVector<T>::pull()
     T temp = arrayPtr[arraySize];
 
     //if removing last entry sets array utilization to less than half
-    if(arraySize-1 < allocSize/2){
+    if(arraySize-1 < allocSize/2 && arraySize-1 != 0){
         //decrement arraySize
         arraySize--;
 
@@ -265,7 +265,7 @@ T SimpleVector<T>::pull()
         allocSize /=2;
 
 
-    }else{
+    }else if(arraySize){
         //if removing last entry doe NOT set array utilization to 
         //less than half decrement array
         arraySize--;

@@ -6,11 +6,11 @@ using namespace std;
 
 int main()
 {
-    SimpleVector<int> vector;//reallocatioin occurs at 2^n increments
+    SimpleVector<int> vector;//reallocation occurs at 2^n increments
 
 //    cout << "Element at 0: " << vector.getElementAt(0)<<endl<<endl;
 
-//    //populate vector with random values
+    //populate vector with random values
     srand(time(0));
     
     for (int count = 0; count <1024; count++){
@@ -22,7 +22,7 @@ int main()
     cout<<endl<<"Pushing random value"<<endl;
     vector.push(rand()%100);
     
-    
+    //testing operator[] override
     vector[1024] = 9999;
     
     cout << vector[1024] << endl;
