@@ -1,13 +1,27 @@
+/*
+ * File: main.h
+ * Author: Brian Warfield
+ * Class: CIS17-C C++: Data Structures
+ * Purpose: test various container implementations
+ */
+
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Stack.h"
 #include "CircularLinkedList.h"
-#include "queue.h"
+#include "Queue.h"
 #include "DoubleLinkedList.h"
+#include "PriorityLinkedList.h"
+#include "priorityqueue.h"
+#include "SortedLinkedList.h"
 
 using namespace std;
 
 int main()
 {
+
+    srand(time(0));
     /*
     cout<<"Creating new doubly linked list\n";
     D_LinkedList<int> dll(10);
@@ -167,6 +181,7 @@ int main()
 //    cout<<"newStack top(): "<<newStack.top()<<endl;//causes subscript error
 //    cout<<"\n\n";
 
+    /*
     Queue<int> queue(0);
 
     cout << "Populating queue"<<endl;
@@ -196,7 +211,7 @@ int main()
     cout<<"newQueue size(): "<<newQueue.size()<<endl;
     cout<<"\n\n";
 
-    cout<<"Popping Valued from newQueue";
+    cout<<"Popping Valued from newQueue\n";
     for (int i = 0; i < 5; ++i) {
         cout<<newQueue.popFront()<<endl;
     }
@@ -205,7 +220,106 @@ int main()
     cout<<"newQueue front(): "<<newQueue.front()<<endl;
     cout<<"newQueue size(): "<<newQueue.size()<<endl;
     cout<<"\n\n";
+*/
 
+    /*
+    cout<<"***********************************\nTesting Priority Linked List\n";
+
+    P_LinkedList<int> pll;
+
+    for (int i = 0; i < 20; ++i) {
+        pll.append(i+1);
+    }
+
+    cout<<"Outputting list of size: "<<pll.size()<<endl;
+    pll.printList();
+    cout<<"\n\n";
+
+    cout<<"Outputting peekMax()\n";
+    cout<<pll.peekMax()<<endl;
+    cout<<"Outputting popMax()\n";
+    cout<<pll.popMax()<<endl;
+     cout<<"Outputting list of size: "<<pll.size()<<endl;
+     pll.printList();
+     cout<<"\n\n";
+
+     cout<<"Outputting peekMin()\n";
+     cout<<pll.peekMin()<<endl;
+     cout<<"Outputting popMin()\n";
+     cout<<pll.popMin()<<endl;
+     cout<<"Outputting list of size: "<<pll.size()<<endl;
+     pll.printList();
+     cout<<"\n\n";
+     */
+
+    /*
+    cout<<"*****************************************\nTesting Priority Queue\n";
+
+    PriorityQueue<int> pq;
+
+    for (int i = 0; i < 20; ++i) {
+        pq.push((rand()%30)+1);
+    }
+
+    cout<<"Outputting list of size: "<<pq.size()<<endl;
+    pq.printQueue();
+    cout<<"\n\n";
+
+    cout<<"OutPutting front()\n";
+    cout<< pq.front()   <<endl;
+    cout<<"OutPutting back()\n";
+    cout<< pq.back()   <<endl;
+    cout<<"\n\n";
+
+
+    cout<<"pop()ing 10 elements\n";
+    for (int i = 0; i < 10; ++i) {
+        cout<<pq.pop()<<endl;
+    }
+    cout<<"\n\n";
+
+    cout<<"Outputting list of size: "<<pq.size()<<endl;
+    pq.printQueue();
+    cout<<"\n\n";
+
+    cout<<"Instanciating descending object\n";
+    PriorityQueue<int> pqd(sortOrder::DEC);
+
+    for (int i = 0; i < 10; ++i) {
+        pqd.push((rand()%15)+1);
+    }
+    cout<<"Outputting list of size: "<<pqd.size()<<endl;
+    pqd.printQueue();
+    cout<<"\n\n";
+
+    cout<<"OutPutting front()\n";
+    cout<< pqd.front()   <<endl;
+    cout<<"OutPutting back()\n";
+    cout<< pqd.back()   <<endl;
+    cout<<"\n\n";
+
+
+    cout<<"pop()ing 5 elements\n";
+    for (int i = 0; i < 5; ++i) {
+        cout<<pqd.pop()<<endl;
+    }
+    cout<<"\n\n";
+
+    cout<<"Outputting list of size: "<<pqd.size()<<endl;
+    pqd.printQueue();
+    cout<<"\n\n";
+    */
+
+    cout<<"*************************************\nTesting Sorted Linked List\n";
+    S_LinkedList<int> sll(SortOrder::ASC);
+
+    for (int i = 0; i < 100; ++i) {
+        sll.push((rand()%50)+1);
+    }
+
+    cout<<"Outputting lis of size: "<<sll.size()<<endl;
+    sll.printList();
+    cout<<"\n\n";
 
     return 0;
 }

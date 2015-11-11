@@ -49,7 +49,12 @@ OBJECTS       = debug/main.o
 DIST          =  Stack.h \
 		DoubleLinkedList.h \
 		Queue.h \
-		CircularLinkedList.h main.cpp
+		CircularLinkedList.h \
+		LinkedList.h \
+		PriorityLinkedList.h \
+		priorityqueue.h \
+		SortedLinkedList.h \
+		SortOrder.h main.cpp
 QMAKE_TARGET  = Container
 DESTDIR        = debug/ #avoid trailing-slash linebreak
 TARGET         = Container.exe
@@ -111,7 +116,14 @@ compiler_clean:
 ####### Compile
 
 debug/main.o: main.cpp Stack.h \
-		DoubleLinkedList.h
+		LinkedList.h \
+		CircularLinkedList.h \
+		Queue.h \
+		DoubleLinkedList.h \
+		PriorityLinkedList.h \
+		priorityqueue.h \
+		SortOrder.h \
+		SortedLinkedList.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/main.o main.cpp
 
 ####### Install

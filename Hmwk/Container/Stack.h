@@ -1,8 +1,14 @@
+/*
+ * File: stack.h
+ * Author: Brian Warfield
+ * Class: CIS17-C C++: Data Structures
+ * Purpose: Stack implementation
+ */
 
 #ifndef STACK_H
 #define	STACK_H
 
-#include "DoubleLinkedList.h"
+#include "LinkedList.h"
 
 template <class T>
 class Stack{
@@ -21,7 +27,7 @@ public:
     virtual ~Stack();
 
 protected:
-    D_LinkedList<T> list;
+    LinkedList<T> list;
     
     
 };
@@ -92,7 +98,7 @@ T Stack<T>::top(){
  */
 template<class T>
 T Stack<T>::pop(){
-        return list.pullFront();
+        return list.extract(0);
 
 }
 

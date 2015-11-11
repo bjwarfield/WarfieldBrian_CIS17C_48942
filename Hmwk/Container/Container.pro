@@ -13,5 +13,9 @@ HEADERS += \
     DoubleLinkedList.h \
     Queue.h \
     CircularLinkedList.h \
-    LinkedList.h
+    LinkedList.h \
+    PriorityLinkedList.h \
+    priorityqueue.h \
+    SortedLinkedList.h \
+    SortOrder.h
 

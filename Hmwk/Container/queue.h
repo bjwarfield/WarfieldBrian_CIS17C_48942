@@ -1,9 +1,16 @@
-#ifndef QUEUE
-#define QUEUE
+/*
+ * File: Queue.h
+ * Author: Brian Warfield
+ * Class: CIS17-C C++: Data Structures
+ * Purpose: Queue implementation
+ */
+
+#ifndef QUEUE_H
+#define QUEUE_H
 
 #include "DoubleLinkedList.h"
 
-#endif // QUEUE
+
 template<class T>
 class Queue{
 public:
@@ -22,7 +29,7 @@ public:
     virtual ~Queue();
 
 protected:
-    D_LinkedList<T> list;
+    LinkedList<T> list;
 };
 
 /**
@@ -109,3 +116,5 @@ template<class T>
 Queue<T>::~Queue(){
     list.clearList();
 }
+
+#endif // QUEUE_H

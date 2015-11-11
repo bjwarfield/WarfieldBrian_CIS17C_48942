@@ -1,4 +1,9 @@
-
+/*
+ * File: LinkedList.h
+ * Author: Brian Warfield
+ * Class: CIS17-C C++: Data Structures
+ * Purpose: linked list implementation
+ */
 
 #ifndef LINKEDLIST_H
 #define	LINKEDLIST_H
@@ -525,21 +530,20 @@ void LinkedList<T>::insertAfter(int index, T value) {
 
     //set to head
     current = head;
-    temp = current;
+    //create new node
+    temp = new node;
+    //capture data
+    temp->data = value;
 
 
     for (int i = 0; i < index; i++) {
         temp = current; //remember previous
         current = current->next; //traverse list
     }
-    //create new node
-    nodePtr newNode = new node;
-    //capture data
-    newNode->data = value;
-    //point new->next to current
-    newNode->next = current;
+    //point new->next to current->next
+    temp->next = current->next;
     //point previous->next to new
-    temp->next = newNode;
+    current->next = temp;
     //increment listSize
     listSize++;
 

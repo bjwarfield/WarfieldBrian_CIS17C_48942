@@ -1,4 +1,9 @@
-
+/*
+ * File: CircularLinkedList.h
+ * Author: Brian Warfield
+ * Class: CIS17-C C++: Data Structures
+ * Purpose: circular linked list implementation
+ */
 
 #ifndef CIRCULARLINKEDLIST_H
 #define	CIRCULARLINKEDLIST_H
