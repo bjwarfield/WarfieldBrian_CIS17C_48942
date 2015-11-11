@@ -29,7 +29,7 @@ public:
     virtual ~Queue();
 
 protected:
-    LinkedList<T> list;
+    D_LinkedList<T> list;
 };
 
 /**
@@ -85,7 +85,7 @@ void Queue<T>::pushBack(T data){
  */
 template<class T>
 T Queue<T>::popFront(){
-    list.pullFront();
+    return list.pullFront();
 }
 
 /**

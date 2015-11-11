@@ -15,6 +15,7 @@
 #include "PriorityLinkedList.h"
 #include "priorityqueue.h"
 #include "SortedLinkedList.h"
+#include "SortOrder.h"
 
 using namespace std;
 
@@ -22,7 +23,7 @@ int main()
 {
 
     srand(time(0));
-    /*
+
     cout<<"Creating new doubly linked list\n";
     D_LinkedList<int> dll(10);
     cout<<"Outputting list\n";
@@ -83,9 +84,9 @@ int main()
     dll.printForward();
     cout<<"\n\n";
 
-*/
 
-    /*
+
+
     cout<<"\n****************************************************************\n";
     cout<<"Creating new circular linked list\n";
     C_LinkedList<int> cll(10);
@@ -143,10 +144,10 @@ int main()
     cll.printList();
     cout<<"\n\n";
 
-*/
 
 
-/*
+
+
     Stack<int> stack(0);
 
     cout << "Populating Stack"<<endl;
@@ -171,7 +172,7 @@ int main()
     cout<<"newStack top(): "<<newStack.top()<<endl;
     cout<<"newStack size(): "<<newStack.size()<<endl;
     cout<<"\n\n";
-*/
+
 
 //    cout<<"Clearing newStack\n";
 //    newStack.clear();
@@ -181,7 +182,7 @@ int main()
 //    cout<<"newStack top(): "<<newStack.top()<<endl;//causes subscript error
 //    cout<<"\n\n";
 
-    /*
+
     Queue<int> queue(0);
 
     cout << "Populating queue"<<endl;
@@ -220,9 +221,9 @@ int main()
     cout<<"newQueue front(): "<<newQueue.front()<<endl;
     cout<<"newQueue size(): "<<newQueue.size()<<endl;
     cout<<"\n\n";
-*/
 
-    /*
+
+
     cout<<"***********************************\nTesting Priority Linked List\n";
 
     P_LinkedList<int> pll;
@@ -250,9 +251,9 @@ int main()
      cout<<"Outputting list of size: "<<pll.size()<<endl;
      pll.printList();
      cout<<"\n\n";
-     */
 
-    /*
+
+
     cout<<"*****************************************\nTesting Priority Queue\n";
 
     PriorityQueue<int> pq;
@@ -283,7 +284,7 @@ int main()
     cout<<"\n\n";
 
     cout<<"Instanciating descending object\n";
-    PriorityQueue<int> pqd(sortOrder::DEC);
+    PriorityQueue<int> pqd(SortOrder::DEC);
 
     for (int i = 0; i < 10; ++i) {
         pqd.push((rand()%15)+1);
@@ -308,7 +309,7 @@ int main()
     cout<<"Outputting list of size: "<<pqd.size()<<endl;
     pqd.printQueue();
     cout<<"\n\n";
-    */
+
 
     cout<<"*************************************\nTesting Sorted Linked List\n";
     S_LinkedList<int> sll(SortOrder::ASC);
