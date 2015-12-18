@@ -15,8 +15,8 @@ private:
     T* arrayPtr;                //To point to the allocated array
     unsigned int arraySize;     //number of elements in the array
     unsigned int allocSize;     //maximum number of elements
-    void memError();            //handles memory allocation errors
-    void subError();            //handles subscripts out of range
+    void memError()const;            //handles memory allocation errors
+    void subError()const;            //handles subscripts out of range
 
 public:
     //iterator implementation
@@ -77,6 +77,9 @@ public:
     void resize(unsigned int newSize);
     T first()const { return *arrayPtr; }
     T last()const { return *(arrayPtr + arraySize-1);}
+    bool isEmpty();
+    void clear();
+
 
 
 
@@ -139,7 +142,7 @@ Vector<T>::Vector(const Vector &obj){
 
 
     //allocate memory for the array
-    cout<< "allocating size for "<<allocSize<<" elements"<<endl;
+//    cout<< "allocating size for "<<allocSize<<" elements"<<endl;
     try{
         arrayPtr = new T[allocSize];
     }catch(bad_alloc){
@@ -148,7 +151,7 @@ Vector<T>::Vector(const Vector &obj){
 
 
     //copy contents of obj to current current instance
-    for(unsigned int i = 0; i < arraySize(); i++){
+    for(unsigned int i = 0; i < arraySize; i++){
         arrayPtr[i] = obj.arrayPtr[i];
     }
 
@@ -163,7 +166,7 @@ Vector<T>::Vector(const Vector &obj){
 template<class T>
 Vector<T>::~Vector()
 {
-    if(arraySize>0)
+    if(arrayPtr)
         delete arrayPtr;
 }
 
@@ -172,7 +175,7 @@ Vector<T>::~Vector()
  * allocation fails
 *******************************************************************************/
 template<class T>
-void Vector<T>::memError(){
+void Vector<T>::memError() const{
     qDebug() << "ERROR: Cannot allocate memory. /n";
     exit(EXIT_FAILURE);
 }
@@ -182,7 +185,7 @@ void Vector<T>::memError(){
  * is out of range
 *******************************************************************************/
 template<class T>
-void Vector<T>::subError(){
+void Vector<T>::subError() const{
     qDebug() << "ERROR: subscript is out of range. /n";
     exit(EXIT_FAILURE);
 }
@@ -230,7 +233,6 @@ void Vector<T>::push_back(const T &item)
         //allocate the appropriate memory
         T *newArray;
         try{
-            //            cout<< "allocating size for "<<newMax<<" elements"<<endl;
             newArray = new T[newMax];
         }catch(bad_alloc){
             memError();
@@ -585,6 +587,30 @@ void Vector<T>::resize(unsigned int newSize)
 
         arraySize = newSize;
     }
+}
+/*******************************************************************************
+ * Returns true if vector size  == 0;
+ * @return true if vector is empty, false if not
+ ******************************************************************************/
+template<class T>
+bool Vector<T>::isEmpty()
+{
+    return arraySize == 0;
+}
+
+/*******************************************************************************
+ * Removes all the elements from the vector and releases the memory used by the
+ *  vector.
+ ******************************************************************************/
+template<class T>
+void Vector<T>::clear()
+{
+    if(arrayPtr){
+        delete arrayPtr;
+    }
+    arrayPtr = 0;
+    arraySize = 0;
+    allocSize = 0;
 }
 
 
