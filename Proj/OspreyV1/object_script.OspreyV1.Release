@@ -1,0 +1,15 @@
+INPUT(
+./release/main.o
+./release/gamewidget.o
+./release/window.o
+./release/sprite.o
+./release/playerentity.o
+./release/entity.o
+./release/shotentity.o
+./release/enemyentity.o
+./release/enemyshotentity.o
+./release/spritestore.o
+./release/timer.o
+./release/qrc_resources.o
+./release/moc_gamewidget.o
+);

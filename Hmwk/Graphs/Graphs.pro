@@ -23,4 +23,5 @@ HEADERS += \
     simplevector.h \
     GeneralHashFunctions.h \
     hash.h \
-    DoubleLinkedList.h
+    DoubleLinkedList.h \
+    tree.h

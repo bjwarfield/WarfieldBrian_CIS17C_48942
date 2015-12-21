@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>title/splash-image.png</file>
+        <file>backgrounds/clouds_01.png</file>
+        <file>title/osprey-logo.png</file>
+        <file>sprites/player/player1sprite.png</file>
+        <file>sprites/player/polarLaser.png</file>
+        <file>sprites/enemy/enemyShot.png</file>
+        <file>sprites/enemy/scout.png</file>
+        <file>tilesets/Agency34.dat</file>
+        <file>tilesets/AgencyGray34.png</file>
+        <file>tilesets/AgencyRed34.png</file>
+        <file>tilesets/Arial12ptRed.dat</file>
+        <file>tilesets/Arial12ptRed.png</file>
+        <file>tilesets/cc.dat</file>
+        <file>tilesets/ccRed.png</file>
+        <file>tilesets/PFArmaFive20.dat</file>
+        <file>tilesets/PFArmaFive20Red.png</file>
+        <file>tilesets/PFArmaFive20Yel.png</file>
+        <file>tilesets/PFArmaFive36.dat</file>
+        <file>tilesets/PFArmaFive36.png</file>
+        <file>tilesets/PFArmaFive36Gray.png</file>
+        <file>tilesets/PixelFont10Red.png</file>
+        <file>tilesets/PixelFont12Red.png</file>
+        <file>tilesets/pixelmix.dat</file>
+        <file>tilesets/pixelmixRed.png</file>
+        <file>tilesets/SpaceTileSet.png</file>
+        <file>tilesets/titleFontGray.png</file>
+        <file>tilesets/titleFontRed.png</file>
+        <file>maps/level_1.JSON</file>
+        <file>sprites/player/laserFlash.png</file>
+        <file>sprites/player/Player1Shrapnel.png</file>
+        <file>sprites/player/Player2Shrapnel.png</file>
+        <file>sprites/player/shotFrags.png</file>
+        <file>sprites/player/thrusters.png</file>
+        <file>sprites/player/whiteSprite.png</file>
+        <file>sprites/enemy/pestilence.png</file>
+        <file>sprites/enemy/probe.png</file>
+        <file>sprites/enemy/scarab.png</file>
+        <file>sprites/blank.png</file>
+        <file>sprites/enemy/cruiser.png</file>
+        <file>maps/level_1.enemies</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/sprites/player/player1sprite.png</file>
+        <file>resources/enemyship1a.png</file>
+        <file>resources/sprites/player/polarLaser.png</file>
+        <file>resources/sprites/player/whiteSprite.png</file>
+        <file>resources/sprites/enemy/scout.png</file>
+        <file>resources/sprites/enemy/enemyShot.png</file>
+    </qresource>
+</RCC>

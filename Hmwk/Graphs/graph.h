@@ -4,6 +4,7 @@
 #include "hash.h"
 #include "simplevector.h"
 #include "DoubleLinkedList.h"
+#include "tree.h"
 #include <QDebug>
 
 using namespace std;
@@ -33,15 +34,20 @@ public:
         int weight;
 
         //comperator overloading
-        bool operator ==(const edge &other)const{
-            if(other.dest.compare(dest) == 0){
-                if(other.source.compare(source) == 0){
-                    return other.weight == weight;
-                }
-            }
-        }
         bool operator >(edge const &other)const{
             return other.weight > this->weight;
+        }
+        bool operator <(edge const &other)const{
+            return other.weight < this->weight;
+        }
+
+        bool operator ==(edge const &other)const{
+            return other.weight == weight;
+        }
+        void operator=(edge const &other){
+            source = other.source;
+            dest = other.dest;
+            weight = other.weight;
         }
 
     };
@@ -238,7 +244,7 @@ void Graph::PrimMST()
     }
 
     //create edgelist
-    DList<edge> edgesQueue;
+    Tree<edge> edgesQueue;
 
     //get names of vertexes
     Vector<QString> vertexList;
@@ -248,37 +254,45 @@ void Graph::PrimMST()
     //create new graph tp represent spanning tree
     Graph mst(vertexList);
 
-    for(it = map.begin(); it!= map.end(); ++it){
-        //if current vertex not visited
-        if(!visited[it.key()] ){
-            //mark it as visited
-            visited[it.key()] = true;
+    QString current = vertexList[0];
 
-            //add all connected verteces to edgeQueue
-            AdjListNode *worker = (*it)->head;
+    int i = 0;
+    while(i < vertexList.size()){
+        //if current vertex not visited
+        if(!visited[current] ){
+            //mark it as visited
+            visited[current] = true;
+
+            //add all connected vertices to edgeQueue
+            AdjListNode *worker = map[current]->head;
             while(worker){
                 //add edge
-                edgesQueue.append(edge(it.key(),worker->dest , worker->weight));
-                //sort
-                edgesQueue.sort();
-                //traverse
+                edgesQueue.add(edge(current,worker->dest , worker->weight));
                 worker = worker->next;
             }
 
             //pull min edge from list
-            edge temp = edgesQueue.pullFront();
+            edge temp = edgesQueue.min();
+            edgesQueue.remove(edgesQueue.min());
 
             //if destination has not been visited, add to MST
             if(!visited[temp.dest]){
                 mst.addEdge(temp.source, temp.dest, temp.weight);
             }
+            current = temp.dest;
+
+            i++;
         }else{//if vertex has been vidited
             //pull min edge from list
-            edge temp = edgesQueue.pullFront();
+            edge temp = edgesQueue.min();
+            edgesQueue.remove(edgesQueue.min());
+
+            current = temp.source;
             //if destination has not been visited, add to MST
             if(!visited[temp.dest]){
                 mst.addEdge(temp.source, temp.dest, temp.weight);
             }
+            current = temp.dest;
         }
 
     }

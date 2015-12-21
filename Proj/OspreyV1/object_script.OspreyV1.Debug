@@ -1,0 +1,15 @@
+INPUT(
+./debug/main.o
+./debug/gamewidget.o
+./debug/window.o
+./debug/sprite.o
+./debug/playerentity.o
+./debug/entity.o
+./debug/shotentity.o
+./debug/enemyentity.o
+./debug/enemyshotentity.o
+./debug/spritestore.o
+./debug/timer.o
+./debug/qrc_resources.o
+./debug/moc_gamewidget.o
+);

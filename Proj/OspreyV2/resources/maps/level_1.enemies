@@ -1,0 +1,1302 @@
+{
+    "enemyList": [
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    -400,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 1000,
+            "spawnX": 800,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    -400,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 1050,
+            "spawnX": 800,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    -400,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 1100,
+            "spawnX": 800,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    -400,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 1150,
+            "spawnX": 800,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    -400,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 1200,
+            "spawnX": 800,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    -400,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 1250,
+            "spawnX": 800,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    -400,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 1300,
+            "spawnX": 800,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    1200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 1500,
+            "spawnX": 0,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    1200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 1600,
+            "spawnX": 0,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    1200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 1650,
+            "spawnX": 0,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    1200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 1700,
+            "spawnX": 0,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    1200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 1750,
+            "spawnX": 0,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    1200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 1800,
+            "spawnX": 0,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    1200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 1850,
+            "spawnX": 0,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    450,
+                    250
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2200,
+            "spawnX": 50,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    550,
+                    250
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2201,
+            "spawnX": 150,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    650,
+                    250
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2202,
+            "spawnX": 250,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    750,
+                    250
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2203,
+            "spawnX": 350,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    450,
+                    150
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2204,
+            "spawnX": 50,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    550,
+                    150
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2205,
+            "spawnX": 150,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    650,
+                    150
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2206,
+            "spawnX": 250,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    450,
+                    50
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2207,
+            "spawnX": 50,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    750,
+                    150
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2207,
+            "spawnX": 350,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    550,
+                    50
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2209,
+            "spawnX": 150,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    650,
+                    50
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2210,
+            "spawnX": 250,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    750,
+                    50
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2211,
+            "spawnX": 350,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    50,
+                    250
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2212,
+            "spawnX": 450,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    150,
+                    250
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2213,
+            "spawnX": 550,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    250,
+                    250
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2214,
+            "spawnX": 650,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    350,
+                    250
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2215,
+            "spawnX": 750,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    50,
+                    150
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2216,
+            "spawnX": 450,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    150,
+                    150
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2217,
+            "spawnX": 550,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    250,
+                    150
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2218,
+            "spawnX": 650,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    350,
+                    150
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2219,
+            "spawnX": 750,
+            "spawnY": -150
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    50,
+                    50
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2220,
+            "spawnX": 450,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    150,
+                    50
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2221,
+            "spawnX": 550,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    250,
+                    50
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2222,
+            "spawnX": 650,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyProbe",
+            "paths": [
+                [
+                    350,
+                    50
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 2223,
+            "spawnX": 750,
+            "spawnY": -250
+        },
+        {
+            "enemyClassName": "EnemyPestilence",
+            "paths": [
+                [
+                    100,
+                    250
+                ],
+                [
+                    400,
+                    250
+                ],
+                [
+                    550,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2800,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyPestilence",
+            "paths": [
+                [
+                    150,
+                    200
+                ],
+                [
+                    450,
+                    200
+                ],
+                [
+                    600,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2800,
+            "spawnX": 150,
+            "spawnY": -100
+        },
+        {
+            "enemyClassName": "EnemyPestilence",
+            "paths": [
+                [
+                    200,
+                    250
+                ],
+                [
+                    500,
+                    250
+                ],
+                [
+                    700,
+                    700
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 2800,
+            "spawnX": 200,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyPestilence",
+            "paths": [
+                [
+                    500,
+                    250
+                ],
+                [
+                    200,
+                    250
+                ],
+                [
+                    100,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 3000,
+            "spawnX": 500,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyPestilence",
+            "paths": [
+                [
+                    550,
+                    200
+                ],
+                [
+                    250,
+                    200
+                ],
+                [
+                    150,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 3000,
+            "spawnX": 550,
+            "spawnY": -100
+        },
+        {
+            "enemyClassName": "EnemyPestilence",
+            "paths": [
+                [
+                    600,
+                    250
+                ],
+                [
+                    300,
+                    250
+                ],
+                [
+                    200,
+                    700
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 3000,
+            "spawnX": 600,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    100,
+                    550
+                ],
+                [
+                    200,
+                    100
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 3200,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    700,
+                    550
+                ],
+                [
+                    600,
+                    100
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 3200,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    100,
+                    550
+                ],
+                [
+                    200,
+                    100
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 3600,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    700,
+                    550
+                ],
+                [
+                    600,
+                    100
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 3600,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    700,
+                    550
+                ],
+                [
+                    600,
+                    100
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 4000,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    700,
+                    550
+                ],
+                [
+                    600,
+                    100
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 4200,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    700,
+                    550
+                ],
+                [
+                    600,
+                    100
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 4400,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    100,
+                    550
+                ],
+                [
+                    200,
+                    100
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 5000,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    100,
+                    550
+                ],
+                [
+                    200,
+                    100
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 5200,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyCruiser",
+            "paths": [
+                [
+                    100,
+                    550
+                ],
+                [
+                    200,
+                    100
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 5400,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    100,
+                    500
+                ],
+                [
+                    700,
+                    500
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 5800,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    700,
+                    500
+                ],
+                [
+                    100,
+                    500
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 5900,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    100,
+                    500
+                ],
+                [
+                    700,
+                    500
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 6000,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    700,
+                    500
+                ],
+                [
+                    100,
+                    500
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 6100,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    100,
+                    500
+                ],
+                [
+                    700,
+                    500
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 6200,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    700,
+                    500
+                ],
+                [
+                    100,
+                    500
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 6300,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    100,
+                    500
+                ],
+                [
+                    700,
+                    500
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 6400,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScarab",
+            "paths": [
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 6400,
+            "spawnX": 400,
+            "spawnY": 700
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    700,
+                    500
+                ],
+                [
+                    100,
+                    500
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 6500,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    100,
+                    500
+                ],
+                [
+                    700,
+                    500
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 6600,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    700,
+                    500
+                ],
+                [
+                    100,
+                    500
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 6700,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    100,
+                    500
+                ],
+                [
+                    700,
+                    500
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 6800,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    700,
+                    500
+                ],
+                [
+                    100,
+                    500
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 6900,
+            "spawnX": 700,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    100,
+                    500
+                ],
+                [
+                    700,
+                    500
+                ],
+                [
+                    700,
+                    100
+                ],
+                [
+                    -200,
+                    100
+                ]
+            ],
+            "polarity": 0,
+            "spawnRef": "",
+            "spawnTrigger": 7000,
+            "spawnX": 100,
+            "spawnY": -50
+        },
+        {
+            "enemyClassName": "EnemyScout",
+            "paths": [
+                [
+                    700,
+                    500
+                ],
+                [
+                    100,
+                    500
+                ],
+                [
+                    100,
+                    100
+                ],
+                [
+                    1000,
+                    100
+                ]
+            ],
+            "polarity": 1,
+            "spawnRef": "",
+            "spawnTrigger": 7100,
+            "spawnX": 700,
+            "spawnY": -50
+        }
+    ]
+}

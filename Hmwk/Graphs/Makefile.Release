@@ -52,7 +52,8 @@ DIST          =  graph.h \
 		simplevector.h \
 		GeneralHashFunctions.h \
 		hash.h \
-		DoubleLinkedList.h main.cpp \
+		DoubleLinkedList.h \
+		tree.h main.cpp \
 		GeneralHashFunctions.cpp
 QMAKE_TARGET  = Graphs
 DESTDIR        = release/ #avoid trailing-slash linebreak
@@ -315,6 +316,7 @@ release/main.o: main.cpp graph.h \
 		simplevector.h \
 		C:/Qt/Qt5.5.0/5.5/mingw492_32/include/QtCore/QDebug \
 		DoubleLinkedList.h \
+		tree.h \
 		C:/Qt/Qt5.5.0/5.5/mingw492_32/include/QtCore/QCoreApplication
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/main.o main.cpp
 
